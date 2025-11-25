@@ -93,7 +93,6 @@ function isValidEmail(email) {
 }
 
 function fakePost(url, payload) {
-
   return fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -170,9 +169,9 @@ formSignup.addEventListener("submit", async function (ev) {
     const data = await fakePost("/signup", payload);
     showStatus("Account created — redirecting…", "success");
     setTimeout(() => {
-
-      window.location.href = "welcome";
+       window.location.href = "dashboard.html";
     }, 900);
+     
   } catch (err) {
     showStatus("Signup failed. Please try again.");
     console.error("Signup error", err);
