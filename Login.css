@@ -30,7 +30,29 @@ body { display:flex; align-items:center; justify-content:center; background: lin
 
 /*TABS STYLING*/
 .tabs { display:flex; gap:8px; margin:6px 0 12px; border-radius: 10px; }
+.tabs {
+  display: flex;
+  width: 100%;
+  background: #f3f4f6;         
+  padding: 4px;                
+  border-radius: 14px;          
+  margin: 16px 0 22px;
+}
+
 .tab {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;      /* No background for inactive tab */
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/*.tab {
   flex:1;
   padding:10px 6px;
   border-radius: 12px;
@@ -40,11 +62,15 @@ body { display:flex; align-items:center; justify-content:center; background: lin
   font-weight:600;
   cursor:pointer;
   transition: all .12s;
-}
-.tab.active {
-  background: white;
+}*/
+/*.tab.active {
   box-shadow: 0 6px 18px rgba(59,130,246,0.12);
   color:#0b1226;
+}*/
+.tab.active {
+  background: #ffffff;          /* White tab */
+  color: #0b1226;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.10);  /* Floating effect */
 }
 
 /*ERROR STATUS*/
@@ -55,8 +81,14 @@ body { display:flex; align-items:center; justify-content:center; background: lin
   font-size:13px;
   display:block;
   color:#b91c1c;
-  background:#fff1f2;
+  background:transparent
 }
+.status[hidden] {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 
 /*FORM*/
 .form { display:none; margin-top:6px; }
@@ -111,33 +143,77 @@ body { display:flex; align-items:center; justify-content:center; background: lin
 .eye-btn:active { transform: translateY(-50%) scale(.98); }
 
 /*BUTTONS ROW*/
-.actions { display:flex; gap:12px; margin-top:6px; justify-content:space-between; align-items:center; }
+/*.actions { display:flex; gap:12px; margin-top:6px; justify-content:space-between; align-items:center; }
 .btn {
   flex:1;
   padding:12px 14px;
   border-radius:12px;
+  justify-content: center;
   border:none;
   font-weight:700;
-  font-size:15px;
+  font-size:12px;
   cursor:pointer;
 }
-.btn.secondary {
+.btn.one {
+  background:#f3f4f6;
+  color:#0b1226;
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  /*border: 1px solid #e8eaef;-
+}*/
+/*.btn.two {
+  background:#f59e0b;
+  color:#08121a;
+  display: flex;
+  box-shadow:0 6px 18px rgba(245,158,11,0.12);
+}*/
+
+/*.btn.create {
+  background:#f59e0b;
+  color:#08121a;
+}*/
+
+/* BUTTON ROW */
+.actions {
+  display:flex;
+  gap:14px;
+  margin-top:12px;
+}
+
+/* BASE BUTTON */
+.btn {
+  flex:1;
+  padding:13px 14px;
+  border-radius:14px;
+  border:none;
+  font-weight:700;
+  font-size:14px;           /* Bigger for screenshot match */
+  cursor:pointer;
+}
+
+/* HELP BUTTON */
+.btn.one {
   background:#f3f4f6;
   color:#0b1226;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap: 8px;
-  border:1px solid #e8eaef;
+  gap:8px;
 }
-.btn.primary {
-  background:#f59e0b;
-  color:#08121a;
-  box-shadow:0 6px 18px rgba(245,158,11,0.12);
-}
+
+/* YELLOW NEXT BUTTON */
+.btn.two,
 .btn.create {
-  background:#f59e0b;
+  background:#fbbf24;
   color:#08121a;
+  box-shadow:0 8px 20px rgba(251,191,36,0.25);
+  transition:0.15s;
+}
+
+.btn.two:hover,
+.btn.create:hover {
+  filter:brightness(1.05);
 }
 
 /*T&C'S*/
