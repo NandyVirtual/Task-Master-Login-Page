@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskMaster Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script type="module">
+    import validator from "https://cdn.jsdelivr.net/npm/validator@13.11.0/+esm";
+    window.validator = validator;
+  </script>
+
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- left side-->
+    <aside class="sidebar" role="navigation" aria-label="Main menu">
+      <div class="brand">
+        
+    <div class="logo">
+      <div class="logo-box">✔</div>
+    </div>
+        <span class="brand-name">TaskMaster</span>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">C</div>
+        <div class="profile-info">
+          <div class="profile-name">user</div>
+          <div class="profile-email">user@gmail.com</div>
+        </div>
+      </div>
+
+      <nav class="menu" aria-label="Sidebar menu">
+        <button class="menu-item active" data-target="dashboard">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="label">Dashboard</span>
+        </button>
+
+        <button class="menu-item" data-target="tasks">
+          <span class="material-symbols-outlined">check-list</span>
+          <span class="label">Tasks</span>
+        </button>
+
+        <button class="menu-item" data-target="community">
+          <span class="material-symbols-outlined">groups</span>
+          <span class="label">Community</span>
+        </button>
+
+        <button class="menu-item" data-target="expenses">
+          <span class="material-symbols-outlined">account_balance_wallet</span>
+          <span class="label">Expenses</span>
+        </button>
+
+        <button class="menu-item" data-target="notes">
+          <span class="material-symbols-outlined">notes</span>
+          <span class="label">Notes</span>
+        </button>
+
+        <button class="menu-item" data-target="settings">
+          <span class="material-symbols-outlined">settings</span>
+          <span class="label">Settings</span>
+        </button>
+      </nav>
+
+      <button id="logoutBtn" class="logout">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Logout</span>
+      </button>
+    </aside>
+
+    <!-- Right side main -->
+    <main class="main" role="main">
+      
+      <section id="dashboard" class="page page-active">
+        <header class="page-header">
+          <h1>Good afternoon, User!</h1>
+          <p class="muted">Here's what's happening with your productivity today</p>
+        </header>
+
+        <!-- top stats -->
+        <div class="stats-row">
+          <div class="stat-card clickable" data-card="active-tasks">
+            <div class="stat-label">Active Tasks</div>
+            <div class="stat-value">0</div>
+            <div class="stat-desc">0 completed</div>
+            <div class="stat-icon"><span class="material-symbols-outlined">task_alt</span></div>
+          </div>
+
+          <div class="stat-card clickable" data-card="expenses">
+            <div class="stat-label">Total Expenses</div>
+            <div class="stat-value">$0.00</div>
+            <div class="stat-desc">This period</div>
+            <div class="stat-icon"><span class="material-symbols-outlined">account_balance_wallet</span></div>
+          </div>
+
+          <div class="stat-card clickable" data-card="notes">
+            <div class="stat-label">Total Notes</div>
+            <div class="stat-value">0</div>
+            <div class="stat-desc">Saved notes</div>
+            <div class="stat-icon"><span class="material-symbols-outlined">article</span></div>
+          </div>
+
+          <div class="stat-card clickable" data-card="completion">
+            <div class="stat-label">Completion Rate</div>
+            <div class="stat-value">0%</div>
+            <div class="stat-desc">Task completion</div>
+            <div class="stat-icon"><span class="material-symbols-outlined">trending_up</span></div>
+          </div>
+        </div>
+
+        <!-- main Right-->
+        <div class="dashboard-lower">
+    <!--Recent Tasks-->
+    <div class="recent-tasks-box">
+        <div class="box-header">
+            <span class="material-symbols-outlined icon-clock">schedule</span>
+            <span class="box-title">Recent Tasks</span>
+        </div>
+
+        <div class="empty-state">
+            <span class="material-symbols-outlined empty-icon">task_alt</span>
+            <p>No tasks yet</p>
+        </div>
+    </div>
+
+        <!-- Quick Actions-->
+    <div class="quick-actions-box">
+        <div class="box-header">
+            <span class="material-symbols-outlined icon-trend">trending_up</span>
+            <span class="box-title">Quick Actions</span>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-icon blue">
+                <span class="material-symbols-outlined">check_box</span>
+            </div>
+            <div class="qa-text">
+                <h4>Create New Task</h4>
+                <p>Add a task to your list</p>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-icon teal">
+                <span class="material-symbols-outlined">attach_money</span>
+            </div>
+            <div class="qa-text">
+                <h4>Track Expense</h4>
+                <p>Record a new expense</p>
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <div class="qa-icon green">
+                <span class="material-symbols-outlined">edit_note</span>
+            </div>
+            <div class="qa-text">
+                <h4>Write Note</h4>
+                <p>Capture your thoughts</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
