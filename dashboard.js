@@ -1,4 +1,4 @@
-// Sidebar menu switching
+;// Sidebar menu switching
 document.querySelectorAll('.menu-item').forEach(btn => {
   btn.addEventListener('click', () => {
     // set active class on menu
@@ -14,9 +14,9 @@ document.querySelectorAll('.menu-item').forEach(btn => {
 });
 
 // Logout button behaviour
-document.getElementById('logoutBtn').addEventListener('click', () => {
-  alert('Logging out...');
-  document.querySelector('.sidebar').style.opacity = 0.8;
+document.getElementById("logoutBtn").addEventListener("click", () => {
+  localStorage.clear();
+  window.location.href = "login.html"; // your login page
 });
 
 // Stat cards clickable: toggle soft gradient/darker background on click
@@ -60,3 +60,8 @@ observer.observe(document.querySelector('main'), { attributes: true, subtree: tr
 document.querySelectorAll('.menu-item').forEach((el) => {
   el.setAttribute('tabindex', '0');
 });
+
+// User name
+const name = localStorage.getItem("username") || "User";
+document.querySelector(".profile-name").textContent = name;
+document.querySelector(".avatar").textContent = name.charAt(0).toUpperCase();

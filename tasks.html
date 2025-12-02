@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TaskMaster — Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="tasks.css">
+</head>
+<body>
+
+<div class="tasks-header">
+  <div class="tasks-title">
+    <div class="tasks-logo">✔</div>
+
+    <div class="tasks-text">
+      <h2>Task Management</h2>
+      <p>Manage and track your tasks</p>
+    </div>
+  </div>
+</div>
+
+<!-- Tabs + Add -->
+<div class="tasks-toolbar">
+  <div class="tabs">
+    <button class="tab active" id="myTasksTab">My Tasks</button>
+    <button class="tab" id="aiTab">AI Summary</button>
+  </div>
+
+  <button id="openAddTask" class="add-task-btn">
+    <span>+</span> Add Task
+  </button>
+</div>
+
+<!--MY TASKS SECTION -->
+<div id="myTasksSection">
+  <div class="task-stats">
+    <div>
+      <h3 id="activeCount">0</h3>
+      <p>Active tasks</p>
+    </div>
+    <div class="divider"></div>
+    <div>
+      <h3 id="completedCount" class="green">0</h3>
+      <p>Completed</p>
+    </div>
+  </div>
+
+  <div id="taskContainer" class="task-box empty"></div>
+</div>
+
+<!-- AI SUMMARY SECTION -->
+<div id="aiSection" class="hidden">
+
+  <h3 class="ai-title">AI-Powered Task Summary</h3>
+  <p class="ai-sub">Get insights and recommendations for your tasks</p>
+
+  <div class="ai-tabs">
+    <button class="ai-tab active" id="latestTab">Latest Summary</button>
+    <button class="ai-tab" id="historyTab">History (0)</button>
+  </div>
+
+  <div id="aiOutput" class="ai-box">
+    <span class="material-symbols-outlined ai-icon">bar_chart</span>
+    <h4>No summary generated yet</h4>
+    <p>Click "Generate New" to get AI-powered insights</p>
+  </div>
+
+</div>
+
+<!-- MODAL (UNCHANGED) -->
+<div id="taskModal" class="modal hidden">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <div class="modal-title">
+        <span class="ai-star">✦</span>
+        <h3>Create New Task</h3>
+      </div>
+      <button id="closeModal">×</button>
+    </div>
+
+    <p class="modal-sub">Add a new task to your productivity list</p>
+
+    <label>Title</label>
+    <div class="input-ai">
+      <input type="text" id="taskTitle">
+      <span class="input-star">✦</span>
+    </div>
+
+    <label>Description</label>
+    <textarea id="taskDesc"></textarea>
+
+    <div class="modal-row">
+      <div>
+        <label>Priority</label>
+        <select id="taskPriority">
+          <option>Low</option>
+          <option selected>Medium</option>
+          <option>High</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Due Date</label>
+        <input type="date" id="taskDate">
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button id="cancelTask">Cancel</button>
+      <button id="createTask">Create Task</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="tasks.js"></script>
+</body>
+</html>
