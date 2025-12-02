@@ -26,7 +26,7 @@ closeBtn.onclick = cancelBtn.onclick = () => modal.classList.add("hidden");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-/* ✅ TAB SWITCHING */
+/* TAB SWITCHING */
 myTasksTab.onclick = () => {
   myTasksTab.classList.add("active");
   aiTab.classList.remove("active");
@@ -41,7 +41,7 @@ aiTab.onclick = () => {
   aiSection.classList.remove("hidden");
 };
 
-/* ✅ AI SUB-TABS */
+/* AI SUB-TABS */
 latestTab.onclick = () => {
   latestTab.classList.add("active");
   historyTab.classList.remove("active");
@@ -52,7 +52,7 @@ historyTab.onclick = () => {
   latestTab.classList.remove("active");
 };
 
-/* ✅ TASK RENDER */
+/* TASK RENDER */
 function renderTasks() {
   if (tasks.length === 0) {
     container.innerHTML = `
