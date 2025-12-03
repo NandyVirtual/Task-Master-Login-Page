@@ -1,5 +1,5 @@
 // TAB SWITCHING
-// =======================
+
 const tabLogin = document.getElementById("tabLogin");
 const tabSignup = document.getElementById("tabSignup");
 
@@ -46,9 +46,8 @@ tabLogin.addEventListener("click", activateLogin);
 tabSignup.addEventListener("click", activateSignup);
 activateLogin();
 
-// =======================
 // PASSWORD TOGGLE
-// =======================
+
 document.querySelectorAll(".eye-btn").forEach(button => {
   button.addEventListener("click", () => {
     const targetId = button.dataset.target;
@@ -59,9 +58,9 @@ document.querySelectorAll(".eye-btn").forEach(button => {
   });
 });
 
-// =======================
+
 // VALIDATION
-// =======================
+
 function isValidEmail(email) {
   try {
     return window.validator && window.validator.isEmail(String(email));
@@ -70,9 +69,9 @@ function isValidEmail(email) {
   }
 }
 
-// =======================
-// SIGNUP (CREATE ACCOUNT)
-// =======================
+
+// SIGNUP or CREATE ACCOUNT)
+
 formSignup.addEventListener("submit", function (e) {
   e.preventDefault();
   clearStatus();
@@ -94,7 +93,7 @@ formSignup.addEventListener("submit", function (e) {
     return;
   }
 
-  // ✅ SAVE USER
+  //SAVE USER
   localStorage.setItem("tm_username", username);
   localStorage.setItem("tm_email", email);
   localStorage.setItem("tm_password", password);
@@ -126,7 +125,7 @@ formLogin.addEventListener("submit", function (e) {
     return;
   }
 
-  // ✅ CHECK STORED USER
+  // CHECK STORED USER
   const savedEmail = localStorage.getItem("tm_email");
   const savedUsername = localStorage.getItem("tm_username");
 
@@ -142,9 +141,9 @@ formLogin.addEventListener("submit", function (e) {
   }, 800);
 });
 
-// =======================
+
 // HELP BUTTONS
-// =======================
+
 document.getElementById("helpLogin").onclick = () =>
   alert("Need help? Contact taskmanager@gmail.com");
 document.getElementById("helpSignup").onclick = () =>
