@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Community | TaskMaster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="community.css" />
+</head>
+<body>
+
+  <div class="community-wrapper">
+
+    <!-- Header -->
+    <div class="community-header">
+      <div class="community-title">
+        <div class="community-icon">👥</div>
+        <div>
+          <h2>Community Board</h2>
+          <p>Collaborate with your team</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post Box -->
+    <div class="post-box">
+      <div class="post-input-row">
+        <div class="avatar blue">J</div>
+        <textarea id="postInput" placeholder="Share an update, ask for help, or celebrate a win... (Mention @comsq to get AI help)"></textarea>
+      </div>
+
+      <div class="post-actions">
+        <button id="postBtn">Post</button>
+      </div>
+    </div>
+
+    <!-- Feed -->
+    <div id="feed" class="community-feed">
+
+      <!-- Example Static Post -->
+      <div class="post-card">
+        <div class="post-user">
+          <div class="avatar purple">E</div>
+          <div>
+            <h4>etse</h4>
+            <span class="time">17h ago</span>
+          </div>
+        </div>
+        <p>what</p>
+      </div>
+
+      <!-- AI Example -->
+      <div class="post-card ai">
+        <div class="post-user">
+          <div class="avatar ai-avatar">✨</div>
+          <div>
+            <h4>Comsq AI <span class="ai-badge">AI Assistant</span></h4>
+            <span class="time">4d ago</span>
+          </div>
+        </div>
+        <p>
+          Hey there! 👋 That’s an ambitious goal! While making $1M in 24 hours is extremely rare,
+          I can help you boost productivity using TaskMaster.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="community.js"></script>
+</body>
+</html>

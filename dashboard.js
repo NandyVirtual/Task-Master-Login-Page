@@ -1,4 +1,4 @@
-;// Sidebar menu switching
+// Sidebar menu switching
 document.querySelectorAll('.menu-item').forEach(btn => {
   btn.addEventListener('click', () => {
 
@@ -11,8 +11,12 @@ document.querySelectorAll('.menu-item').forEach(btn => {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('page-active'));
     const page = document.getElementById(target);
     if (page) page.classList.add('page-active');
+document.querySelectorAll('.page').forEach(p => 
+  p.style.display = p.id === target ? 'block' : 'none'
+);
   });
 });
+
 
 // Logout button behaviour
 document.getElementById("logoutBtn").addEventListener("click", () => {
@@ -31,15 +35,15 @@ document.querySelectorAll('.stat-card.clickable').forEach(card => {
   });
 });
 
-// Quick actions: when clicked they turn teal/active
+// Quick actions
 document.querySelectorAll('.qa-item').forEach(item => {
   item.addEventListener('click', () => {
     item.classList.toggle('active');
 
-    // small feedback (demo) — in a real app you'd open the related modal or navigate
+    // small feedback
     const action = item.getAttribute('data-action');
-    // console.log('Quick action clicked:', action);
-  });
+    console.log('Quick action clicked:', action);
+ });
 });
 
 // Pages placeholder content handling
@@ -62,9 +66,12 @@ document.querySelectorAll('.menu-item').forEach((el) => {
   el.setAttribute('tabindex', '0');
 });
 //tasks edits
-if (target === "tasks") document.getElementById("dashboard").classList.remove("page-active");
+//if (target === "tasks") document.getElementById("dashboard").classList.remove("page-active");
 
-// User name
-const name = localStorage.getItem("username") || "User";
-document.querySelector(".profile-name").textContent = name;
-document.querySelector(".avatar").textContent = name.charAt(0).toUpperCase();
+// User details
+const userName = localStorage.getItem("tm_username") || "User";
+const userEmail = localStorage.getItem("tm_email") || "user@gmail.com";
+
+document.querySelector(".profile-name").textContent = userName;
+document.querySelector(".profile-email").textContent = userEmail;
+document.querySelector(".avatar").textContent = userName.charAt(0).toUpperCase();
