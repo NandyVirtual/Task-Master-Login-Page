@@ -1,6 +1,7 @@
 ;// Sidebar menu switching
 document.querySelectorAll('.menu-item').forEach(btn => {
   btn.addEventListener('click', () => {
+
     // set active class on menu
     document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
     btn.classList.add('active');
@@ -60,6 +61,8 @@ observer.observe(document.querySelector('main'), { attributes: true, subtree: tr
 document.querySelectorAll('.menu-item').forEach((el) => {
   el.setAttribute('tabindex', '0');
 });
+//tasks edits
+if (target === "tasks") document.getElementById("dashboard").classList.remove("page-active");
 
 // User name
 const name = localStorage.getItem("username") || "User";

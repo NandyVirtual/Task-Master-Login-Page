@@ -122,12 +122,11 @@ formLogin.addEventListener("submit", async function (ev) {
     showStatus("Password must be at least 6 characters.");
     return;
   }
-//-------------------------
+//-------------------------//
   showStatus("Signing in…", "success");
 
   localStorage.setItem("username", username);
 window.location.href = "dashboard.html";
-//
 
   const payload = { action: "login", email, password, ts: new Date().toISOString() };
 
